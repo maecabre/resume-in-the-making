@@ -259,5 +259,5 @@ $(document).click(function(loc){
 });
 
 
-$("mapDiv").append(googleMap);
+$("#mapDiv").append(googleMap);
 
