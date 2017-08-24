@@ -7,11 +7,18 @@ var work = {
 		{
 			"employer" : "Mark Choi",
 			"title" : "Warehouse Inventory Assistant",
-			"location" : "Arcadia",
+			"location" : "Arcadia, USA",
 			"dates" : ["Summer 2015"],
 			"description" : "The position included loading and unloading products\
 			from containers packaging and wrapping goods for shipment, and transferring\
 			and arranging merchandise."
+		},
+		{
+			"employer" : "Jose Salgado",
+			"title" : "Cashier",
+			"location" : "Alhambra, USA",
+			"dates" : ["Summer 2011"],
+			"description" : "I sold fireworks to people that wanted to buy fireworks."
 		}
 	]
 }
@@ -23,15 +30,15 @@ var projects = {
 
 	"schoolWork" : [
 		{
-			"title" : "Project #1",
-			"dates" : "N/A",
-			"description" : "N/A",
+			"title" : "Android Game",
+			"dates" : "2016",
+			"description" : "A failed attempt at creating an Android app at a Hackathon. Woops.",
 			"images" : ["images/fry.jpg", "images/fry.jpg"]
 		},
 		{
-			"title" : "Project #2",
-			"dates" : "N/A",
-			"description" : "N/A",
+			"title" : "Android App",
+			"dates" : "2017",
+			"description" : "Made an app that creates study groups for other classmates on campus.",
 			"images" : ["images/fry.jpg"]
 		}
 	]
@@ -47,14 +54,14 @@ var bio = {
 	"name" : "Mario Cabrera",
 	"role" : "Robotics Engineer",
 	"welcomeMessage" : "Welcome to my resume!",
-	"biopic" : "N/A",
-	"contacts" : {
+	"biopic" : "images/fry.jpg",
+	"contacts" : [{
 		"mobile" : "323-496-0583",
 		"email" : "maecabre.ucsc.edu",
 		"github" : "maecabre",
 		"twitter" : "@marioislife",
 		"location" : "Los Angeles"
-	},
+	}],
 	"skills" : ["C", "Java", "Python", "HTML", "JavaScript", "CSS", "Verilog"]
 }
 
