@@ -58,23 +58,15 @@ var bio = {
 	"role" : "Robotics Engineer",
 	"welcomeMessage" : "Welcome to my resume!",
 	"biopic" : "images/fry.jpg",
-	"contacts" : [{
+	"contacts" : {
 		"mobile" : "323-496-0583",
 		"email" : "maecabre.ucsc.edu",
 		"github" : "maecabre",
 		"twitter" : "@marioislife",
-		"location" : "Los Angeles"
-	}],
+		"location" : "Los Angeles",
+		"blog" : "Blog website here"
+	},
 	"skills" : ["C", "Java", "Python", "HTML", "JavaScript", "CSS", "Verilog"]
-}
-
-bio.display = function(){
-
-	var formattedName = HTMLheaderName.replace("%data%", bio.name);
-	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-	$("#header").prepend(formattedRole);
-	$("#header").prepend(formattedName);
-
 }
 
 
@@ -272,6 +264,43 @@ work.display = function(){
 
 }
 
+//-------------------------------------------------------------------------------------------------
+// Bio display function
+
+bio.display = function(){
+
+	var formattedName = HTMLheaderName.replace("%data%", bio.name);
+	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+	$("#header").prepend(formattedRole);
+	$("#header").prepend(formattedName);
+
+	// var formattedGeneric = HTMLcontactGeneric.replace("%contact%", "test contact");
+	// formattedGeneric = HTMLcontactGeneric.replace("%data%", "test data");
+	// $("#topContacts").append(formattedGeneric);
+
+	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+	$("#footerContacts").append(formattedMobile);
+
+	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+	$("#footerContacts").append(formattedEmail);
+
+	var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+	$("#footerContacts").append(formattedTwitter);
+
+	var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+	$("#footerContacts").append(formattedGithub);
+
+	var formattedBlog = HTMLblog.replace("%data%", bio.contacts.blog);
+	$("#footerContacts").append(formattedBlog);
+
+	var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
+	$("#header").append(formattedBioPic);
+
+	var formattedWelcomeMess = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+	$("#header").append(formattedWelcomeMess);
+
+}
+
 
 // console.log(projects.schoolWork[0].title);
 
@@ -279,6 +308,7 @@ work.display = function(){
 // Display functions
 projects.display();
 work.display();
+bio.display();
 
 
 //-------------------------------------------------------------------------------------------------
