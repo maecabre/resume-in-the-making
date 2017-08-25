@@ -1,3 +1,4 @@
+//-------------------------------------------------------------------------------------------------
 // work
 // work contains an array of jobs. Each object in the jobs array should contain an employer,
 // title, location, dates worked and description strings.
@@ -23,6 +24,7 @@ var work = {
 	]
 }
 
+//-------------------------------------------------------------------------------------------------
 // projects
 // projects contains an array of projects. Each object in the projects array should contain
 // title, dates and description strings, and an images array with URL strings for project images.
@@ -45,6 +47,7 @@ var projects = {
 }
 
 
+//-------------------------------------------------------------------------------------------------
 // bio
 // bio contains name, role, welcomeMessage, and biopic strings, contacts object and skills array
 // of skill strings. The contacts object should contain a mobile number, email address, github username,
@@ -65,8 +68,17 @@ var bio = {
 	"skills" : ["C", "Java", "Python", "HTML", "JavaScript", "CSS", "Verilog"]
 }
 
+bio.display = function(){
+
+	var formattedName = HTMLheaderName.replace("%data%", bio.name);
+	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+	$("#header").prepend(formattedRole);
+	$("#header").prepend(formattedName);
+
+}
 
 
+//-------------------------------------------------------------------------------------------------
 // education
 // education contains an array of schools. Each object in the schools array contains name,
 // location, degree dates and url strings, and a majors array of major strings. 
@@ -81,11 +93,15 @@ var education = {
 	"major" : "Robotics Engineering"
 }
 
+
+//-------------------------------------------------------------------------------------------------
 // var formattedName = HTMLheaderName.replace("%data%", bio.name);
 // var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 // $("#header").prepend(formattedRole);
 // $("#header").prepend(formattedName);
 
+//-------------------------------------------------------------------------------------------------
+// Skills
 if(bio.skills.length > 0){
 
 	    $("#header").append(HTMLskillsStart);
@@ -106,35 +122,6 @@ if(bio.skills.length > 0){
 	    $("#skills").append(formattedSkill);
 	}
 
-function displayWork(){
-
-	for(job in work.jobs){
-
-		$("#workExperience").append(HTMLworkStart);
-
-		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-		$(".work-entry:last").append(formattedEmployer);
-
-		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-		$(".work-entry:last").append(formattedTitle);
-
-		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-		$(".work-entry:last").append(formattedDates);
-
-		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-		$(".work-entry:last").append(formattedLocation);
-
-		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-		$(".work-entry:last").append(formattedDescription);
-
-		var formmattedEmployerTitle = formattedEmployer + formattedTitle;
-		$(".work-entry:last").append(formmattedEmployerTitle)
-	}
-
-}
-
-//-------------------------------------------------------------------------------------------------
-displayWork();
 
 //-------------------------------------------------------------------------------------------------
 // $(document).click(function(loc){
@@ -228,10 +215,8 @@ function inName(oldName) {
     return finalName;
 };
 
-$("#main").append(internationalizeButton);
-
 //-------------------------------------------------------------------------------------------------
-
+// Projects Display function
 projects.display = function(){
 
 	for(project in projects.schoolWork){
@@ -258,13 +243,53 @@ projects.display = function(){
 	}
 }
 
-projects.display();
+//-------------------------------------------------------------------------------------------------
+// Work display function
+work.display = function(){
+
+	for(job in work.jobs){
+
+		$("#workExperience").append(HTMLworkStart);
+
+		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+		$(".work-entry:last").append(formattedEmployer);
+
+		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+		$(".work-entry:last").append(formattedTitle);
+
+		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+		$(".work-entry:last").append(formattedDates);
+
+		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+		$(".work-entry:last").append(formattedLocation);
+
+		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+		$(".work-entry:last").append(formattedDescription);
+
+		var formmattedEmployerTitle = formattedEmployer + formattedTitle;
+		$(".work-entry:last").append(formmattedEmployerTitle)
+	}
+
+}
+
+
 // console.log(projects.schoolWork[0].title);
 
+//-------------------------------------------------------------------------------------------------
+// Display functions
+projects.display();
+work.display();
+
+
+//-------------------------------------------------------------------------------------------------
+// This prints the mouse location everytime something is clicked
 $(document).click(function(loc){
 	console.log(loc.pageX, loc.pageY);
 });
 
 
+//-------------------------------------------------------------------------------------------------
+// Append stuff to the HTML file
+$("#main").append(internationalizeButton);
 $("#mapDiv").append(googleMap);
 
