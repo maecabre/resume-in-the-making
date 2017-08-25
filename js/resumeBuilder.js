@@ -86,6 +86,7 @@ var education = {
 }
 
 
+
 //-------------------------------------------------------------------------------------------------
 // var formattedName = HTMLheaderName.replace("%data%", bio.name);
 // var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -243,7 +244,7 @@ work.display = function(){
 }
 
 //-------------------------------------------------------------------------------------------------
-// Work display function
+// Bio display function
 
 bio.display = function(){
 
@@ -300,6 +301,29 @@ bio.display = function(){
 
 }
 
+//-------------------------------------------------------------------------------------------------
+// Education display function
+
+education.display = function(){
+
+	$("#education").append(HTMLschoolStart);
+
+	var formattedSchoolName = HTMLschoolName.replace("%data%", education.name);
+	$(".education-entry:last").append(formattedSchoolName);
+
+	var formattedDegree = HTMLschoolDegree.replace("%data%", education.degree);
+	$(".education-entry:last").append(formattedDegree);
+
+	var formattedDates = HTMLschoolDates.replace("%data%", education.date);
+	$(".education-entry:last").append(formattedDates);
+
+	var formattedLocation = HTMLschoolLocation.replace("%data%", education.location);
+	$(".education-entry:last").append(formattedLocation);
+
+	var formattedMajor = HTMLschoolMajor.replace("%data%", education.major);
+	$(".education-entry:last").append(formattedMajor);
+	
+}
 
 // console.log(projects.schoolWork[0].title);
 
@@ -308,6 +332,7 @@ bio.display = function(){
 projects.display();
 work.display();
 bio.display();
+education.display();
 
 
 //-------------------------------------------------------------------------------------------------
