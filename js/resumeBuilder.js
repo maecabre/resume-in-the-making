@@ -66,7 +66,7 @@ var bio = {
 		"location" : "Los Angeles",
 		"blog" : "Blog website here"
 	},
-	"skills" : ["C", "Java", "Python", "HTML", "JavaScript", "CSS", "Verilog"]
+	"skills" : ["C", "Java", "Python", "HTML"]
 }
 
 
@@ -85,19 +85,6 @@ var education = {
 	"major" : "Robotics Engineering"
 }
 
-//-------------------------------------------------------------------------------------------------
-// Returns array of work locations
-// function locationizer(work_obj) {
-
-// 	var locationArray = [];
-// 	for(job in work_obj.jobs){
-// 		locationArray.push(work_obj.jobs[job].location);
-// 	}
-// 	return locationArray;
-// }
-
-// console.log(locationizer(work));
-
 
 //-------------------------------------------------------------------------------------------------
 // Formats name such as: Mario CABRERA, Albert EINSTEIN 
@@ -110,7 +97,6 @@ function inName(oldName) {
 
     var finalName = firstName + " " + lastname;
 
-    // Don't delete this line!
     return finalName;
 };
 
@@ -165,59 +151,74 @@ work.display = function(){
 // Bio display function
 
 bio.display = function(){
-
 	var formattedName = HTMLheaderName.replace("%data%", bio.name);
 	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 	$("#header").prepend(formattedRole);
 	$("#header").prepend(formattedName);
 
-	// var formattedGeneric = HTMLcontactGeneric.replace("%contact%", "test contact");
-	// formattedGeneric = HTMLcontactGeneric.replace("%data%", "test data");
-	// $("#topContacts").append(formattedGeneric);
-
-	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-	$("#footerContacts").append(formattedMobile);
-
-	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-	$("#footerContacts").append(formattedEmail);
-
-	var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-	$("#footerContacts").append(formattedTwitter);
-
-	var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-	$("#footerContacts").append(formattedGithub);
-
-	var formattedBlog = HTMLblog.replace("%data%", bio.contacts.blog);
-	$("#footerContacts").append(formattedBlog);
-
-	var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
-	$("#header").append(formattedBioPic);
-
 	var formattedWelcomeMess = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-	$("#header").append(formattedWelcomeMess);
+	var formattedImage = HTMLbioPic.replace("%data%", bio.biopic);
+	$("#header").append(formattedImage + formattedWelcomeMess);
 
-	// Skills
-	if(bio.skills.length > 0){
+	$("#header").append(HTMLskillsStart);
 
-	    $("#header").append(HTMLskillsStart);
-
-	    var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-	    $("#skills").append(formattedSkill);
-	    var formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-	    $("#skills").append(formattedSkill);
-	    var formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-	    $("#skills").append(formattedSkill);
-	    var formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
-	    $("#skills").append(formattedSkill);
-	    var formattedSkill = HTMLskills.replace("%data%", bio.skills[4]);
-	    $("#skills").append(formattedSkill);
-	    var formattedSkill = HTMLskills.replace("%data%", bio.skills[5]);
-	    $("#skills").append(formattedSkill);
-	    var formattedSkill = HTMLskills.replace("%data%", bio.skills[6]);
-	    $("#skills").append(formattedSkill);
+	for(skill in bio.skills) {
+		var formattedSkills = HTMLskills.replace("%data%",bio.skills[skill]);
+		$("#skills").append(formattedSkills);
 	}
 
+	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+	var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+	var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+	var formattedBlog = HTMLblog.replace("%data%", bio.contacts.blog);
+
+	$("#footerContacts").append(formattedMobile, formattedEmail, formattedGithub,
+		formattedTwitter, formattedBlog);
+
 }
+
+// bio.display = function(){
+
+// 	var formattedName = HTMLheaderName.replace("%data%", bio.name);
+// 	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+// 	$("#header").prepend(formattedRole);
+// 	$("#header").prepend(formattedName);
+
+// 	// var formattedGeneric = HTMLcontactGeneric.replace("%contact%", "test contact");
+// 	// formattedGeneric = HTMLcontactGeneric.replace("%data%", "test data");
+// 	// $("#topContacts").append(formattedGeneric);
+
+// 	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+// 	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+// 	var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+// 	var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+// 	var formattedBlog = HTMLblog.replace("%data%", bio.contacts.blog);
+// 	$("#footerContacts").append(formattedMobile +
+// 		formattedEmail, formattedTwitter, formattedGithub, formattedBlog);
+
+// 	var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
+// 	var formattedWelcomeMess = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+// 	$("#header").append(formattedWelcomeMess + formattedBioPic);
+
+
+// 	// Skills
+//     $("#header").append(HTMLskillsStart);
+
+//     // for(skill in bio.skills){
+//     // 	var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
+//     // 	$("#skills").append(formattedSkill);
+//     // }
+
+//     // var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+//     // $("#skills").append(formattedSkill);
+//     // var formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+//     // $("#skills").append(formattedSkill);
+//     // var formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+//     // $("#skills").append(formattedSkill);
+//     // var formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
+//     // $("#skills").append(formattedSkill);
+// }
 
 //-------------------------------------------------------------------------------------------------
 // Education display function
