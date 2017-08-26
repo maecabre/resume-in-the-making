@@ -151,22 +151,12 @@ work.display = function(){
 		$("#workExperience").append(HTMLworkStart);
 
 		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-		$(".work-entry:last").append(formattedEmployer);
-
 		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-		$(".work-entry:last").append(formattedTitle);
-
 		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-		$(".work-entry:last").append(formattedDates);
-
 		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-		$(".work-entry:last").append(formattedLocation);
-
 		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-		$(".work-entry:last").append(formattedDescription);
-
-		var formmattedEmployerTitle = formattedEmployer + formattedTitle;
-		$(".work-entry:last").append(formmattedEmployerTitle)
+		$(".work-entry:last").append(formattedEmployer +
+			formattedTitle, formattedDates, formattedLocation, formattedDescription);
 	}
 
 }
