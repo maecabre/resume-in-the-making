@@ -231,26 +231,19 @@ bio.display = function(){
 
 //-------------------------------------------------------------------------------------------------
 // Education display function
+// SchoolName, degree, dates, major
 
 education.display = function(){
 
 	$("#education").append(HTMLschoolStart);
 
-	var formattedSchoolName = HTMLschoolName.replace("%data%", education.name);
-	$(".education-entry:last").append(formattedSchoolName);
-
+	var formattedName = HTMLschoolName.replace("%data%", education.name);
 	var formattedDegree = HTMLschoolDegree.replace("%data%", education.degree);
-	$(".education-entry:last").append(formattedDegree);
-
 	var formattedDates = HTMLschoolDates.replace("%data%", education.date);
-	$(".education-entry:last").append(formattedDates);
-
 	var formattedLocation = HTMLschoolLocation.replace("%data%", education.location);
-	$(".education-entry:last").append(formattedLocation);
-
 	var formattedMajor = HTMLschoolMajor.replace("%data%", education.major);
-	$(".education-entry:last").append(formattedMajor);
-	
+	$(".education-entry:last").append(formattedName +
+		formattedDegree, formattedDates, formattedLocation, formattedMajor);
 }
 
 
