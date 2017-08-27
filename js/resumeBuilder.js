@@ -60,7 +60,7 @@ var bio = {
 	and projects to show for soon. As of now I am a fourth year UCSC student studying Robotics Engineering\
 	getting ready for the infamous Mechatronics class, the core of Robotics Engineering. So I'll see\
 	you on the other side and stay in touch ;D",
-	"biopic" : "images/fry.jpg",
+	"biopic" : "images/Howie.jpg",
 	// Add any amount of contacts
 	"contacts" : {
 		"mobile" : "323-496-0583",
