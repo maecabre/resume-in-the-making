@@ -64,7 +64,6 @@ var bio = {
 		"email" : "maecabre.ucsc.edu",
 		"github" : "maecabre",
 		"twitter" : "@marioislife",
-		"location" : "Los Angeles",
 		"blog" : "Blog website here"
 	},
 	// Add any amount of skills
@@ -187,11 +186,11 @@ education.display = function(){
 
 	$("#education").append(HTMLschoolStart);
 
-	var formattedName = HTMLschoolName.replace("%data%", education.name);
-	var formattedDegree = HTMLschoolDegree.replace("%data%", education.degree);
-	var formattedDates = HTMLschoolDates.replace("%data%", education.date);
-	var formattedLocation = HTMLschoolLocation.replace("%data%", education.location);
-	var formattedMajor = HTMLschoolMajor.replace("%data%", education.major);
+	var formattedName = HTMLschoolName.replace("%data%", education.schools.name);
+	var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools.degree);
+	var formattedDates = HTMLschoolDates.replace("%data%", education.schools.date);
+	var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools.location);
+	var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools.major);
 	$(".education-entry:last").append(formattedName +
 		formattedDegree, formattedDates, formattedLocation, formattedMajor);
 }
