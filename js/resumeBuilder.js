@@ -58,6 +58,7 @@ var bio = {
 	"role" : "Robotics Engineer",
 	"welcomeMessage" : "Welcome to my resume!",
 	"biopic" : "images/fry.jpg",
+	// Add any amount of contacts
 	"contacts" : {
 		"mobile" : "323-496-0583",
 		"email" : "maecabre.ucsc.edu",
@@ -66,7 +67,8 @@ var bio = {
 		"location" : "Los Angeles",
 		"blog" : "Blog website here"
 	},
-	"skills" : ["C", "Java", "Python", "HTML"]
+	// Add any amount of skills
+	"skills" : ["C", "Java", "Python", "HTML", "JavaScript", "CSS", "LaTeX", "MatLab", "Verilog"]
 }
 
 
@@ -78,11 +80,13 @@ var bio = {
 // contain a title, school, dates and url strings.
 var education = {
 
-	"name" : "University of California, Santa Cruz",
-	"location" : "Santa Cruz",
-	"date" : "2018",
-	"degree" : "BS",
-	"major" : "Robotics Engineering"
+	"schools" : {
+		"name" : "University of California, Santa Cruz",
+		"location" : "Santa Cruz",
+		"date" : "2018",
+		"degree" : "BS",
+		"major" : "Robotics Engineering"
+	}
 }
 
 
@@ -167,58 +171,13 @@ bio.display = function(){
 		$("#skills").append(formattedSkills);
 	}
 
-	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-	var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-	var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-	var formattedBlog = HTMLblog.replace("%data%", bio.contacts.blog);
-
-	$("#footerContacts").append(formattedMobile, formattedEmail, formattedGithub,
-		formattedTwitter, formattedBlog);
+	for (key in bio.contacts) {
+		var formattedContact = HTMLcontactGeneric.replace("%contact%",
+			key).replace("%data%", bio.contacts[key]);
+		$("#footerContacts").append(formattedContact);
+	}
 
 }
-
-// bio.display = function(){
-
-// 	var formattedName = HTMLheaderName.replace("%data%", bio.name);
-// 	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-// 	$("#header").prepend(formattedRole);
-// 	$("#header").prepend(formattedName);
-
-// 	// var formattedGeneric = HTMLcontactGeneric.replace("%contact%", "test contact");
-// 	// formattedGeneric = HTMLcontactGeneric.replace("%data%", "test data");
-// 	// $("#topContacts").append(formattedGeneric);
-
-// 	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-// 	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-// 	var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-// 	var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-// 	var formattedBlog = HTMLblog.replace("%data%", bio.contacts.blog);
-// 	$("#footerContacts").append(formattedMobile +
-// 		formattedEmail, formattedTwitter, formattedGithub, formattedBlog);
-
-// 	var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
-// 	var formattedWelcomeMess = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-// 	$("#header").append(formattedWelcomeMess + formattedBioPic);
-
-
-// 	// Skills
-//     $("#header").append(HTMLskillsStart);
-
-//     // for(skill in bio.skills){
-//     // 	var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
-//     // 	$("#skills").append(formattedSkill);
-//     // }
-
-//     // var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-//     // $("#skills").append(formattedSkill);
-//     // var formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-//     // $("#skills").append(formattedSkill);
-//     // var formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-//     // $("#skills").append(formattedSkill);
-//     // var formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
-//     // $("#skills").append(formattedSkill);
-// }
 
 //-------------------------------------------------------------------------------------------------
 // Education display function
