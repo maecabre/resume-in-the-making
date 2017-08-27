@@ -56,7 +56,10 @@ var bio = {
 
 	"name" : "Mario Cabrera",
 	"role" : "Robotics Engineer",
-	"welcomeMessage" : "Welcome to my resume!",
+	"welcomeMessage" : "Welcome to my resume (in the making)! Hopefully I can have more work experience\
+	and projects to show for soon. As of now I am a fourth year UCSC student studying Robotics Engineering\
+	getting ready for the infamous Mechatronics class, the core of Robotics Engineering. So I'll see\
+	you on the other side and stay in touch ;D",
 	"biopic" : "images/fry.jpg",
 	// Add any amount of contacts
 	"contacts" : {
@@ -64,7 +67,8 @@ var bio = {
 		"email" : "maecabre.ucsc.edu",
 		"github" : "maecabre",
 		"twitter" : "@marioislife",
-		"blog" : "Blog website here"
+		"blog" : "Blog website here",
+		"location" : "Los Angeles, USA"
 	},
 	// Add any amount of skills
 	"skills" : ["C", "Java", "Python", "HTML", "JavaScript", "CSS", "LaTeX", "MatLab", "Verilog"]
@@ -79,13 +83,20 @@ var bio = {
 // contain a title, school, dates and url strings.
 var education = {
 
-	"schools" : {
+	"schools" : [{
 		"name" : "University of California, Santa Cruz",
 		"location" : "Santa Cruz",
 		"date" : "2018",
 		"degree" : "BS",
 		"major" : "Robotics Engineering"
-	}
+	},
+	{
+		"name" : "University of California, Santa Cruz",
+		"location" : "Los Angeles",
+		"date" : "2018",
+		"degree" : "BS",
+		"major" : "Robotics Engineering"
+	}]
 }
 
 
@@ -170,9 +181,9 @@ bio.display = function(){
 		$("#skills").append(formattedSkills);
 	}
 
-	for (key in bio.contacts) {
+	for(contact in bio.contacts) {
 		var formattedContact = HTMLcontactGeneric.replace("%contact%",
-			key).replace("%data%", bio.contacts[key]);
+			contact).replace("%data%", bio.contacts[contact]);
 		$("#footerContacts").append(formattedContact);
 	}
 
