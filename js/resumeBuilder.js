@@ -89,13 +89,6 @@ var education = {
 		"date" : "2018",
 		"degree" : "BS",
 		"major" : "Robotics Engineering"
-	},
-	{
-		"name" : "University of California, Santa Cruz",
-		"location" : "Los Angeles",
-		"date" : "2018",
-		"degree" : "BS",
-		"major" : "Robotics Engineering"
 	}]
 }
 
@@ -197,13 +190,16 @@ education.display = function(){
 
 	$("#education").append(HTMLschoolStart);
 
-	var formattedName = HTMLschoolName.replace("%data%", education.schools.name);
-	var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools.degree);
-	var formattedDates = HTMLschoolDates.replace("%data%", education.schools.date);
-	var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools.location);
-	var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools.major);
-	$(".education-entry:last").append(formattedName +
-		formattedDegree, formattedDates, formattedLocation, formattedMajor);
+	for(school in education.schools){
+		var formattedName = HTMLschoolName.replace("%data%", education.schools[school].name);
+		var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+		var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].date);
+		var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+		var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+		$(".education-entry:last").append(formattedName +
+			formattedDegree, formattedDates, formattedLocation, formattedMajor);
+	}
+
 }
 
 
