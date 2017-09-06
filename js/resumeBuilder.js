@@ -32,16 +32,16 @@ var projects = {
 
 	"schoolWork" : [
 		{
-			"title" : "Android Game",
-			"dates" : "2016",
-			"description" : "A failed attempt at creating an Android app at a Hackathon. Woops.",
-			"images" : ["images/fry.jpg", "images/fry.jpg"]
+			"title" : "Twitter Bot",
+			"dates" : "2017",
+			"description" : "Created a twitter bot that generates random images using Processing",
+			"images" : ["images/MawioBot.png", "images/crystal.jpg"]
 		},
 		{
-			"title" : "Android App",
+			"title" : "Study Buddies",
 			"dates" : "2017",
-			"description" : "Made an app that creates study groups for other classmates on campus.",
-			"images" : ["images/fry.jpg"]
+			"description" : "Helped make an app that creates study groups for other classmates on campus.",
+			"images" : ["images/StudyGroup.png", "images/Classes.png"]
 		}
 	]
 }
