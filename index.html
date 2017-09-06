@@ -25,8 +25,8 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
         <title>Resume</title>
 
         <!-- Load the page styles. -->
-        <link href="css/style.css" rel="stylesheet" type="text/css">
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="css/style.css" rel="stylesheet" type="text/css">
 
         <!--Uncomment the <script> tag below when you're ready to add an interactive Google Map to your resume!-->
         <!-- <script src="http://maps.googleapis.com/maps/api/js?libraries=places"></script> -->
@@ -43,8 +43,7 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     <body>
 
         <!-- Button trigger modal -->
-        <img class="img-responsive" src="images/fry.jpg" alt="Appify Image"
-                        data-toggle="modal" data-target="#project1">
+        <img class="img-responsive" src="images/fry.jpg" alt="Appify Image" data-toggle="modal" data-target="#project1">
 
         <!-- Modal -->
         <div class="modal fade" id="project1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -52,11 +51,19 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title" id="myModalLabel">Here's My Appify Page</h4>
+                        <h4 class="modal-title" id="myModalLabel">Project Title goes here</h4>
                     </div>
                     <div class="modal-body">
-                        <img class="img-responsive" src="images/fry.jpeg">
-                        <p>Hello. My name is Mario and welcome to my Appify Project!</p> 
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <img class="img-responsive center-content" src="images/fry.jpg">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">Description goes here</div>
+                            </div>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

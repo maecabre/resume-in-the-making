@@ -95,17 +95,17 @@ var education = {
 
 //-------------------------------------------------------------------------------------------------
 // Formats name such as: Mario CABRERA, Albert EINSTEIN 
-function inName(oldName) {
-    var stringArray = oldName.split(" ");
-    var firstName = stringArray[0].toLowerCase();
-    var lastname = stringArray[1].toUpperCase();
-    var firstLetter = firstName.slice(0,1).toUpperCase();
-    firstName = firstLetter + firstName.slice(1);
+// function inName(oldName) {
+//     var stringArray = oldName.split(" ");
+//     var firstName = stringArray[0].toLowerCase();
+//     var lastname = stringArray[1].toUpperCase();
+//     var firstLetter = firstName.slice(0,1).toUpperCase();
+//     firstName = firstLetter + firstName.slice(1);
 
-    var finalName = firstName + " " + lastname;
+//     var finalName = firstName + " " + lastname;
 
-    return finalName;
-};
+//     return finalName;
+// };
 
 //-------------------------------------------------------------------------------------------------
 // Projects Display function
@@ -220,6 +220,6 @@ $(document).click(function(loc){
 
 //-------------------------------------------------------------------------------------------------
 // Append stuff to the HTML file
-$("#main").append(internationalizeButton);
+// $("#main").append(internationalizeButton);
 $("#mapDiv").append(googleMap);
 
