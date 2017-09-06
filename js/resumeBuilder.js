@@ -132,6 +132,13 @@ projects.display = function(){
 					"project" + project + "image" + image);
 				$(".project-entry:last").append(formattedProjectImage);
 				console.log(formattedProjectImage);
+
+
+				formattedProjectImageModal = HTMLprojectImageModal.replace("%uniqueTarget%",
+					"project" + project + "image" + image).replace("%data%",
+					projects.schoolWork[project].images[image]);
+				console.log(formattedProjectImageModal);
+				$("#modals").append(formattedProjectImageModal);
 			}
 		}
 	}
