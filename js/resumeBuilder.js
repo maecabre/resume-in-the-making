@@ -128,8 +128,10 @@ projects.display = function(){
 		if(projects.schoolWork[project].images.length > 0){
 			for(image in projects.schoolWork[project].images){
 				var formattedProjectImage = HTMLprojectImage.replace("%data%",
-					projects.schoolWork[project].images[image]);
+					projects.schoolWork[project].images[image]).replace("%uniqueTarget%",
+					"project" + project + "image" + image);
 				$(".project-entry:last").append(formattedProjectImage);
+				console.log(formattedProjectImage);
 			}
 		}
 	}
@@ -213,9 +215,9 @@ education.display();
 
 //-------------------------------------------------------------------------------------------------
 // This prints the mouse location everytime something is clicked
-$(document).click(function(loc){
-	console.log(loc.pageX, loc.pageY);
-});
+// $(document).click(function(loc){
+// 	console.log(loc.pageX, loc.pageY);
+// });
 
 
 //-------------------------------------------------------------------------------------------------
